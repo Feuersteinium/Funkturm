@@ -1,0 +1,14 @@
+[UPDATER]
+
+# Options: Paper, Purpur, Vanilla
+
+software = "purpur"
+
+# When using Vanilla
+# Visit https://fabricmc.net/use/server/ and grep latest Fabric Loader Version and Installer Version
+fabricloader = "0.14.21"
+fabricversion = "0.11.2"
+[Discord]
+webhook = ""
+avatar = ""
+server = ""
