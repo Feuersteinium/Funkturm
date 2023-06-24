@@ -22,6 +22,10 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.REGISTRY_TOKEN }}
       - name: Build the Image
-        run: cd Pterodactyl-Auto-Update && docker build . -t ghcr.io/feuersteinium/funkturm-pau:latest -t ghcr.io/feuersteinium/funkturm-pau:{{github.run_number}} 
+        run: cd Pterodactyl-Auto-Update && docker build . -t $TONE -t $TTWO$TTHREE 
+        env:
+          TONE: "ghcr.io/feuersteinium/funkturm-pau:latest"
+          TTWO: "ghcr.io/feuersteinium/funkturm-pau:"
+          TTHREE: "${{ github.run_number }}"
       - name: Docker push
         run: cd Pterodactyl-Auto-Update && docker push ghcr.io/feuersteinium/funkturm-pau:latest
