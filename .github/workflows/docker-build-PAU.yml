@@ -5,8 +5,6 @@ on:
   push:
     branches:
       - master
-    tags:
-      - PAU
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,3 +27,7 @@ jobs:
           TTHREE: "${{ github.run_number }}"
       - name: Docker push
         run: cd Pterodactyl-Auto-Update && docker push ghcr.io/feuersteinium/funkturm-pau:latest
+      - name: Docker push (2)
+        run: cd Pterodactyl-Auto-Update && docker push ghcr.io/feuersteinium/funkturm-pau:$TTHREE
+        env:  
+          TTHREE: "${{ github.run_number }}"
