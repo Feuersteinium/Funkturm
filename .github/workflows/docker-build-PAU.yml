@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - master
+    tags:
+      - "PAU-*"
 jobs:
   build:
     runs-on: ubuntu-latest
