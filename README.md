@@ -4,7 +4,7 @@
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/t/feuersteinium/funkturm?style=for-the-badge&color=FF5233)
 
 
-![LOGO](/mountain.png)
+![LOGO](/mountain.svg)
 
 # Mountain
 A Monorepository for my self hosted services
