@@ -7,9 +7,9 @@ python --version
 java -version
 
 
-# Donwloading updater.py (Current Version 3.0)
+# Downloading updater.py (Current Version 3.0)
 
-wget https://github.com/Feuersteinium/Funkturm/releases/download/PAD-1.0/updater.py -Oupdater.py
+wget  https://github.com/Feuersteinium/mountain/releases/download/PAD-1.0/updater.py -Oupdater.py
 
 
 # RUN!
