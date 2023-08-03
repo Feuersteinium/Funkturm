@@ -19,7 +19,7 @@ WORKDIR /home/container
 
 # Adding Entrypoint
 COPY ./entrypoint.sh /entrypoint.sh
-RUN cd / && chmod +x entrypoint.sh
+RUN cd / && ls -l
 
 # Done!
 CMD ["/bin/sh", "/entrypoint.sh"]
