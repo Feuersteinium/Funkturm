@@ -10,6 +10,10 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories
 ADD requirements.txt /home/container/requirements.txt
 RUN pip install -r /home/container/requirements.txt --break-system-packages
 
+# Adding Entrypoint
+COPY ./entrypoint.sh /entrypoint.sh
+RUN chmod 777 /entrypoint.sh
+
 
 # Adding User
 RUN adduser -D -h /home/container container
@@ -17,9 +21,6 @@ USER container
 ENV  USER=container HOME=/home/container
 WORKDIR /home/container
 
-# Adding Entrypoint
-COPY ./entrypoint.sh /entrypoint.sh
-RUN cd / && ls -l
 
 # Done!
 CMD ["/bin/sh", "/entrypoint.sh"]
