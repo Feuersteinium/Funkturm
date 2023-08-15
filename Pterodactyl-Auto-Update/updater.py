@@ -139,7 +139,7 @@ def dl(updateddotmd):
 
 
 def webhook():
-    payload = "## Automated Server Update\n**Details:**\nServer: " + str(config["Discord"]["server"]) + "\nSoftware: " + str(updatedmd[0]) + "\nNew Version: " + str(updatedmd[1]) + "\nNew Build: " + str(updatedmd[2]) + "\nUpdater Version: " + str(updater_ver) + "\nTrigger: Crash/Restart \n Source Code: https://git.feuerstein.dev/PNL/Pterodactyl-Auto-Update"
+    payload = "## Automated Server Update\n**Details:**\nServer: " + str(config["Discord"]["server"]) + "\nSoftware: " + str(updatedmd[0]) + "\nNew Version: " + str(updatedmd[1]) + "\nNew Build: " + str(updatedmd[2]) + "\nUpdater Version: " + str(updater_ver) + "\nTrigger: Crash/Restart \n Source Code: https://github.com/Feuersteinium/mountain/"
     data = {
         "content" : payload,
         "username" : "Updater.py",
