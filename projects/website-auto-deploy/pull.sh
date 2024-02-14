@@ -1,7 +1,8 @@
-cd /home/web
+cd /home/app
 
 git clone https://github.com/Feuersteinium/feuersteinium.github.io.git --branch master
 git fetch
-git revert --heard HEAD
+git reset --hard HEAD
 git pull
 
+nginx
