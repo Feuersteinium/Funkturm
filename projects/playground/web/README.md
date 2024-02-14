@@ -1,0 +1,1 @@
+In this Folder you can find the code I'm using/I used to practise web development. The subfolders are named after the day since the start of my project and the name of the specific project.
