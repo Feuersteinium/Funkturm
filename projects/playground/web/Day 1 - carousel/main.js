@@ -37,3 +37,8 @@ function reload() {
     x = document.querySelector("#carousel")
     x.setAttribute("src" , carousel[activeItem])
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector("#buttonright").addEventListener("click", buttonright);
+    document.querySelector("#buttonleft").addEventListener("click", buttonleft);
+  });
