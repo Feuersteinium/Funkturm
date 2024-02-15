@@ -14,15 +14,59 @@
 
 <body>
   <div class="container">
-    <div class="container-formstatus"></div>
+    <div class="container-formstatus">
+      <img src="assets/images/bg-sidebar-desktop.svg">
+      <div class="container-formstatus-sid">
+        <div class="boxy">
+          <h2>1</h2>
+          <p class="step-indicator">Step 1</p>
+          <p class="step-description">Your info</p>
+        </div>
+        <h2>2</h2>
+        <p>Step 2</p>
+        <p>Select plan</p>
+        <h2>3</h2>
+        <p>Step 3</p>
+        <p>Add-ons</p>
+        <h2>4</h2>
+        <p>Step 4</p>
+        <p>Summary</p>
+      </div>
+    </div>
     <div class="container-form">
-      <label for="name">Name</label>
-      <input name="name" type="text">
-      <label for="mail">Email Adress</label>
-      <input name="mail" type="email">
-      <label for="phone">Phone Number</label>
-      <input name="phone" type="tel">
-      <button type="submit">Next Step</button>
+      <h1>Personal Info</h1>
+      <p></p>
+      <form id="f-step-1">
+        <label for="name">Name</label>
+        <input required="true" name="name" type="text">
+        <label required="true" for="mail">Email Adress</label>
+        <input name="mail" type="email">
+        <label for="phone">Phone Number</label>
+        <input required="true" name="phone" type="tel">
+        <button type="submit">Next Step</button>
+      </form>
+
+      <form id="f-step-2">
+        <fieldset>
+          <input id="arcade" name="plan" type="radio">
+          <label for="arcade">Arcade</label>
+          <input id="advanced" name="plan" type="radio">
+          <label for="advanced">Advanced</label>
+          <input id="pro" name="plan" type="radio">
+          <label for="pro">Pro</label>
+        </fieldset>
+      </form>
+
+      <form id="f-step-3">
+        <input id="service" type="checkbox">
+        <input id="storage" type="checkbox">
+        <input id="profile" type="checkbox">
+      </form>
+
+      <form id="f-step-4">
+
+      </form>
+
     </div>
   </div>
 

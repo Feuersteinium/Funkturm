@@ -1,3 +1,13 @@
+@font-face {
+    font-family: ubuntu;
+    src: url(assets/fonts/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+    font-family: ubuntub;
+    src: url(assets/fonts/Ubuntu-Bold.ttf);
+}
+
 body {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -5,6 +15,13 @@ body {
     background-color: hsl(229, 24%, 87%);
     height: 100vh;
 }
+
+
+h1, h2, h3, h4, h5, h6, p {
+    font-family: ubuntub;
+}
+
+
 
 .container {
     background-color:hsl(0, 0%, 100%);
@@ -14,8 +31,67 @@ body {
 }
 
 .container-form {
+    
+    * {
+        display: block;
+    }
+  
+    input {
+        border-radius: 0.5rem;
+        height: 2rem;
+        border-color: hsl(231, 11%, 63%);
+    }
+
+    button {
+        border-color:hsl(213, 96%, 18%);
+        background-color: hsl(213, 96%, 18%);
+        color: hsl(0, 0%, 100%);
+    }
+
+}
+.container-formstatus {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    img {
+        height: calc(100% - 2rem);
+        border: 1rem solid transparent;
+        grid-area: 1 / 1;
+    }
+
+    .container-formstatus-sid {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        grid-area: 1 / 1;
+        z-index: 5;
+        flex-grow: 0;
+    }
+
 }
 
-.container-formstatus {
+.boxy {
+    display: grid;
+    grid-template-columns: repeat(2, fit-content);
+    grid-template-rows: repeat(2, fit-content);
+}
 
+.boxy h2 {
+      /*  border-radius: 2rem;
+        border: 0.5rem solid white;
+        background-color: aliceblue;
+        aspect-ratio: 1/1 ;
+        display: flex;
+        justify-content: center;
+        align-items: center; */
+        grid-area: 1 / 1 / 3 / 2;
+        
+}
+
+.boxy .step-indicator {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.boxy .step-description {
+    grid-area: 2 / 2 / 3 / 3;
 }
