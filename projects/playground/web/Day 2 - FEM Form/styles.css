@@ -1,0 +1,21 @@
+body {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    background-color: hsl(229, 24%, 87%);
+    height: 100vh;
+}
+
+.container {
+    background-color:hsl(0, 0%, 100%);
+    border-radius: 1rem;
+    grid-area:  2 / 3 / 10 / 9;
+    display: flex;
+}
+
+.container-form {
+}
+
+.container-formstatus {
+
+}
