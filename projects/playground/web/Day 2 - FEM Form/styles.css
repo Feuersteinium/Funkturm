@@ -54,81 +54,17 @@ p {
     display: flex;
 }
 
+/* Chapter I >> The Form itself*/
+
+
 .container-form {
     display: flex;
     flex-direction: column;
-
-    input {
-        border-radius: 0.5rem;
-        height: 2rem;
-        border: 2px solid var(--color-c-gray);
-    }
-
+    width: 100%;
+    padding: 2rem 4rem;
 }
 
-.container-formstatus {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-
-    img {
-        height: calc(100% - 2rem);
-        border: 1rem solid transparent;
-        grid-area: 1 / 1 / 2 / 2;
-    }
-
-    .container-formstatus-sid {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        grid-area: 1 / 1;
-        z-index: 5;
-        flex-grow: 0;
-    }
-
-}
-
-.boxy {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    height: min-content;
-}
-
-.boxy h2 {
-    border-radius: 10rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    aspect-ratio: 1 / 1;
-    grid-area: 1 / 1 / 3 / 2;
-    height: 65%;
-    border: 2px solid var(--color-white);
-}
-
-.boxy .step-indicator {
-    grid-area: 1 / 2 / 2 / 3;
-}
-
-.boxy .step-description {
-    grid-area: 2 / 2 / 3 / 3;
-}
-
-
-
-
-#f-step-1 {
-    display: flex;
-    flex-direction: column;
-}
-
-
-#f-step-1 label {
-    font-family: ubuntum;
-    color: var(--color-marine);
-    margin-bottom: 0.5rem;
-}
-
+/* Buttons */
 
 .btns {
     display: flex;
@@ -156,6 +92,34 @@ p {
 
 
 
+/*Step 1*/
+
+#f-step-1 {
+    display: none;
+    flex-direction: column;
+}
+
+
+#f-step-1 label {
+    font-family: ubuntum;
+    color: var(--color-marine);
+    margin-bottom: 0.5rem;
+}
+
+#f-step-1 input {
+    border-radius: 0.5rem;
+    height: 2rem;
+    border: 2px solid var(--color-c-gray);
+}
+
+
+/*Step 2*/
+
+
+#f-step-2 {
+    display: none;
+    flex-direction: column;
+}
 
 #f-step-2 label {
     display: flex;
@@ -187,6 +151,12 @@ p {
 }
 
 
+/*Step 3*/
+
+#f-step-3 {
+    display: none;
+    flex-direction: column;
+}
 
 
 .step3-op {
@@ -222,5 +192,52 @@ p {
     margin-left: auto;
 }
 
+/* Chapter II >> The Sidebar*/
 
-.step3-op
+.container-formstatus {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.container-formstatus img {
+        height: calc(100% - 2rem);
+        border: 1rem solid transparent;
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+.container-formstatus-sid {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        grid-area: 1 / 1;
+        z-index: 5;
+        flex-grow: 0;
+    }
+
+
+.boxy {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: min-content;
+}
+
+.boxy h2 {
+    border-radius: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    grid-area: 1 / 1 / 3 / 2;
+    height: 65%;
+    border: 2px solid var(--color-white);
+}
+
+.boxy .step-indicator {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.boxy .step-description {
+    grid-area: 2 / 2 / 3 / 3;
+}
