@@ -52,7 +52,7 @@
         <label for="phone">Phone Number</label>
         <input required="true" name="phone" type="tel">
         <div class="btns">
-          <button>Go Back</button>
+          <button type="button">Go Back</button>
           <button type="submit">Next Step</button>
         </div>
       </form>
@@ -62,7 +62,7 @@
         <p>You have the option of monthly or yearly billing.</p>
 
         <fieldset>
-          <input id="arcade" name="plan" type="radio">
+          <input id="arcade" name="plan" value="90" type="radio">
 
           <label for="arcade">
             <img src="assets/images/icon-arcade.svg">
@@ -70,14 +70,14 @@
             <p>$90/yr</p>
             <p>2 Months free</p>
           </label>
-          <input id="advanced" name="plan" type="radio">
+          <input id="advanced" name="plan" value="120" type="radio">
           <label for="advanced">
             <img src="assets/images/icon-advanced.svg">
             <p>Advanced</p>
             <p>$120/yr</p>
             <p>2 Months free</p>
           </label>
-          <input id="pro" name="plan" type="radio">
+          <input id="pro" name="plan" value="150" type="radio">
           <label for="pro">
             <img src="assets/images/icon-pro.svg">
             <p>Pro</p>
@@ -86,7 +86,7 @@
           </label>
         </fieldset>
         <div class="btns">
-          <button>Go Back</button>
+          <button type="button">Go Back</button>
           <button type="submit">Next Step</button>
         </div>
       </form>
@@ -96,7 +96,7 @@
         </h1>
         <p>Add-ons help enhance your gaming experience.</p>
         <label for="service" class="step3-op">
-          <input id="service" type="checkbox"><label></label>
+          <input id="service" name="service" value="1" type="checkbox"><label></label>
           <div>
             <p>Online service</p>
             <p>Access to multiplayer games</p>
@@ -104,7 +104,7 @@
           <p>+$1/mo</p>
         </label>
         <label for="storage" class="step3-op">
-          <input id="storage" type="checkbox"><label></label>
+          <input id="storage" name="storage" type="checkbox" value="2"><label></label>
           <div>
             <p>Larger storage</p>
             <p>Extra 1TB of cloud save</p>
@@ -112,7 +112,7 @@
           <p>+$2/mo</p>
         </label>
         <label for="profile" class="step3-op">
-          <input id="profile" type="checkbox">
+          <input id="profile" name="profile" value="2" type="checkbox">
           <div>
             <p>Customizable Profile</p>
             <p>Custom theme on your profile</p>
@@ -121,14 +121,30 @@
           <p>+$2/mo</p>
         </label>
         <div class="btns">
-          <button>Go Back</button>
+          <button type="button">Go Back</button>
           <button type="submit">Next Step</button>
         </div>
       </form>
 
-      <form id="f-step-4">
+      <div id="f-step-4">
 
-      </form>
+        <h1>Finishing up</h1>
+        <p>Double-check everything looks OK before confirming.</p>
+        <p>Total (per month/year)</p>
+        <div class="btns">
+          <button type="button">Go Back</button>
+          <button type="submit">Confirm</button>
+        </div>
+        
+
+      </div>
+      <div id="f-step-5">
+        <img src="assets/images/icon-thank-you.svg">
+        <h1>Thank you!</h1>
+        <p>Thanks for confirming your subscription! We hope you have fun 
+          using our platform. If you ever need support, please feel free 
+          to email us at support@loremgaming.com.</p>
+      </div>
 
     </div>
   </div>
