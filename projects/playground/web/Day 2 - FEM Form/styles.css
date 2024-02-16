@@ -1,3 +1,11 @@
+:root {
+    --color-l-gray: hsl(229, 24%, 87%);
+    --color-c-gray: hsl(231, 11%, 63%);
+    --color-marine: hsl(213, 96%, 18%);
+    --color-white: hsl(0, 0%, 100%);
+}
+
+
 @font-face {
     font-family: ubuntu;
     src: url(assets/fonts/Ubuntu-Regular.ttf);
@@ -6,6 +14,11 @@
 @font-face {
     font-family: ubuntub;
     src: url(assets/fonts/Ubuntu-Bold.ttf);
+}
+
+@font-face {
+    font-family: ubuntum;
+    src: url(assets/fonts/Ubuntu-Medium.ttf);
 }
 
 body {
@@ -17,46 +30,51 @@ body {
 }
 
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     font-family: ubuntub;
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 
 
 .container {
-    background-color:hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 100%);
     border-radius: 1rem;
-    grid-area:  2 / 3 / 10 / 9;
+    grid-area: 2 / 3 / 10 / 9;
     display: flex;
 }
 
 .container-form {
-    
-    * {
-        display: block;
-    }
-  
+    display: flex;
+    flex-direction: column;
+
     input {
         border-radius: 0.5rem;
         height: 2rem;
-        border-color: hsl(231, 11%, 63%);
-    }
-
-    button {
-        border-color:hsl(213, 96%, 18%);
-        background-color: hsl(213, 96%, 18%);
-        color: hsl(0, 0%, 100%);
+        border: 2px solid var(--color-c-gray);
     }
 
 }
+
 .container-formstatus {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+
     img {
         height: calc(100% - 2rem);
         border: 1rem solid transparent;
-        grid-area: 1 / 1;
+        grid-area: 1 / 1 / 2 / 2;
     }
 
     .container-formstatus-sid {
@@ -72,20 +90,20 @@ h1, h2, h3, h4, h5, h6, p {
 
 .boxy {
     display: grid;
-    grid-template-columns: repeat(2, fit-content);
-    grid-template-rows: repeat(2, fit-content);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: min-content;
 }
 
 .boxy h2 {
-      /*  border-radius: 2rem;
-        border: 0.5rem solid white;
-        background-color: aliceblue;
-        aspect-ratio: 1/1 ;
-        display: flex;
-        justify-content: center;
-        align-items: center; */
-        grid-area: 1 / 1 / 3 / 2;
-        
+    border-radius: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    grid-area: 1 / 1 / 3 / 2;
+    height: 65%;
+    border: 2px solid var(--color-white);
 }
 
 .boxy .step-indicator {
@@ -95,3 +113,114 @@ h1, h2, h3, h4, h5, h6, p {
 .boxy .step-description {
     grid-area: 2 / 2 / 3 / 3;
 }
+
+
+
+
+#f-step-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#f-step-1 label {
+    font-family: ubuntum;
+    color: var(--color-marine);
+    margin-bottom: 0.5rem;
+}
+
+
+.btns {
+    display: flex;
+}
+
+.btns button {
+    border: none;
+    background-color: transparent;
+    color: var(--color-c-gray);
+    height: 2rem;
+    padding: 0.5rem;
+    font-family: ubuntub;
+}
+
+.btns button:nth-child(2) {
+    border-radius: 0.5rem;
+    border: 2px solid var(--color-marine);
+    background-color: var(--color-marine);
+    color: hsl(0, 0%, 100%);
+    height: 2rem;
+    padding: 0.5rem;
+    font-family: ubuntub;
+    margin-left: auto;
+}
+
+
+
+
+#f-step-2 label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    border: 2px solid transparent;
+    border-radius: 2px;
+}
+
+
+#f-step-2 fieldset {
+    display: flex;
+    justify-content: space-evenly;
+    border: none;
+}
+
+
+#f-step-2 input {
+    display: none;
+}
+
+
+#f-step-2 input:checked+label {
+    border: 2px solid hsl(243, 100%, 62%);
+    border-radius: 1rem;
+    background-color: hsl(206, 94%, 87%);
+
+}
+
+
+
+
+.step3-op {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    border-radius: 1rem;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+
+.step3-op input {
+    height: 1.5rem;
+    margin: 0 2rem;
+}
+
+
+.step3-op div p:nth-child(1) {
+    font-size: 1.15rem;
+    font-family: ubuntub;
+}
+
+.step3-op div p:nth-child(2) {
+    color: var(--color-c-gray);
+    font-family: ubuntum;
+}
+
+.step3-op>p {
+    color: var(--color-c-gray);
+    margin-left: auto;
+}
+
+
+.step3-op

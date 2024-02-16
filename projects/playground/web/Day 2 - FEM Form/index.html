@@ -22,20 +22,26 @@
           <p class="step-indicator">Step 1</p>
           <p class="step-description">Your info</p>
         </div>
-        <h2>2</h2>
-        <p>Step 2</p>
-        <p>Select plan</p>
-        <h2>3</h2>
-        <p>Step 3</p>
-        <p>Add-ons</p>
-        <h2>4</h2>
-        <p>Step 4</p>
-        <p>Summary</p>
+        <div class="boxy">
+          <h2>2</h2>
+          <p>Step 2</p>
+          <p>Select plan</p>
+        </div>
+        <div class="boxy">
+          <h2>3</h2>
+          <p>Step 3</p>
+          <p>Add-ons</p>
+        </div>
+        <div class="boxy">
+          <h2>4</h2>
+          <p>Step 4</p>
+          <p>Summary</p>
+        </div>
       </div>
     </div>
     <div class="container-form">
       <h1>Personal Info</h1>
-      <p></p>
+      <p> Please provide your name, email address, and phone number.</p>
       <form id="f-step-1">
         <label for="name">Name</label>
         <input required="true" name="name" type="text">
@@ -43,24 +49,79 @@
         <input name="mail" type="email">
         <label for="phone">Phone Number</label>
         <input required="true" name="phone" type="tel">
-        <button type="submit">Next Step</button>
+        <div class="btns">
+          <button>Go Back</button>
+          <button type="submit">Next Step</button>
+        </div>
       </form>
 
       <form id="f-step-2">
+        <h1>Select your plan</h1>
+        <p>You have the option of monthly or yearly billing.</p>
+
         <fieldset>
           <input id="arcade" name="plan" type="radio">
-          <label for="arcade">Arcade</label>
+
+          <label for="arcade">
+            <img src="assets/images/icon-arcade.svg">
+            <p>Arcade</p>
+            <p>$90/yr</p>
+            <p>2 Months free</p>
+          </label>
           <input id="advanced" name="plan" type="radio">
-          <label for="advanced">Advanced</label>
+          <label for="advanced">
+            <img src="assets/images/icon-advanced.svg">
+            <p>Advanced</p>
+            <p>$120/yr</p>
+            <p>2 Months free</p>
+          </label>
           <input id="pro" name="plan" type="radio">
-          <label for="pro">Pro</label>
+          <label for="pro">
+            <img src="assets/images/icon-pro.svg">
+            <p>Pro</p>
+            <p>$150/yr</p>
+            <p>2 Months free</p>
+          </label>
         </fieldset>
+        <div class="btns">
+          <button>Go Back</button>
+          <button type="submit">Next Step</button>
+        </div>
       </form>
 
       <form id="f-step-3">
-        <input id="service" type="checkbox">
-        <input id="storage" type="checkbox">
-        <input id="profile" type="checkbox">
+        <h1>Pick add-ons
+        </h1>
+        <p>Add-ons help enhance your gaming experience.</p>
+        <label for="service" class="step3-op">
+          <input id="service" type="checkbox"><label></label>
+          <div>
+            <p>Online service</p>
+            <p>Access to multiplayer games</p>
+          </div>
+          <p>+$1/mo</p>
+        </label>
+        <label for="storage" class="step3-op">
+          <input id="storage" type="checkbox"><label></label>
+          <div>
+            <p>Larger storage</p>
+            <p>Extra 1TB of cloud save</p>
+          </div>
+          <p>+$2/mo</p>
+        </label>
+        <label for="profile" class="step3-op">
+          <input id="profile" type="checkbox">
+          <div>
+            <p>Customizable Profile</p>
+            <p>Custom theme on your profile</p>
+
+          </div>
+          <p>+$2/mo</p>
+        </label>
+        <div class="btns">
+          <button>Go Back</button>
+          <button type="submit">Next Step</button>
+        </div>
       </form>
 
       <form id="f-step-4">
