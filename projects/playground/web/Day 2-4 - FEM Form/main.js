@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     submit(currentSlide)
    
 let gobackbtn = document.querySelectorAll(".btns button:first-child")
-gobackbtn.forEach( (btn) => {btn.addEventListener("click", () => {
+gobackbtn.forEach( (btn, skipfor = "OFF") => {btn.addEventListener("click", () => {
     if (currentSlide > 1) {
         let form = document.querySelector('#f-step-' + currentSlide.toString())
         let indicator = document.querySelector(".boxy:nth-child(" + currentSlide.toString() + ") h2")
@@ -121,4 +121,30 @@ function pricecalculation(input) {
         document.querySelector("#totalpricing").textContent = pricing.toString() + "$/yr"
         }
     }
+
+
+    document.querySelector(".boxy:nth-of-type(1)").addEventListener("click", () => {
+        swto(1)
+    })
+        
+    document.querySelector(".boxy:nth-of-type(2)").addEventListener("click", () => {
+        swto(2)
+    })
+    document.querySelector(".boxy:nth-of-type(3)").addEventListener("click", () => {
+        swto(3)
+    })
+    document.querySelector(".boxy:nth-of-type(4)").addEventListener("click", () => {
+        swto(4)
+    })
+
+    function swto(slidenb) {
+        console.log("triggered")
+        let form = document.querySelector('#f-step-' + currentSlide.toString())
+        let indicator = document.querySelector(".boxy:nth-child(" + currentSlide.toString() + ") h2")
+        indicator.style.backgroundColor = ""
+        form.style.display = "none"
+        currentSlide = slidenb
+        submit(currentSlide)
+    }
 })
+
