@@ -121,7 +121,7 @@ p {
     flex-direction: column;
 }
 
-#f-step-2 label {
+#f-step-2 label:not(.slider) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -142,6 +142,29 @@ p {
     display: none;
 }
 
+
+#f-step-2 .slider {
+    display: inline-block;
+    border-radius: 2rem;
+    background-color: transparent;
+    width: 2.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid black;
+}
+
+input:checked + .slider {
+    justify-content: flex-end !important;
+    
+}
+
+#f-step-2 .slider::before {
+    content: '';
+    border: 0.7rem solid var(--color-marine);
+    border-radius: 2rem;
+}
 
 #f-step-2 input:checked+label {
     border: 2px solid hsl(243, 100%, 62%);
@@ -245,10 +268,13 @@ p {
     grid-area: 2 / 2 / 3 / 3;
 }
 
+/* Form Setp 4*/
+
 #f-step-4 {
     display: none;
     flex-direction: column;
 }
+
 
 
 #f-step-5 {

@@ -62,7 +62,7 @@
         <p>You have the option of monthly or yearly billing.</p>
 
         <fieldset>
-          <input id="arcade" name="plan" value="90" type="radio">
+          <input id="arcade" name="plan" value="9" type="radio">
 
           <label for="arcade">
             <img src="assets/images/icon-arcade.svg">
@@ -70,14 +70,14 @@
             <p>$90/yr</p>
             <p>2 Months free</p>
           </label>
-          <input id="advanced" name="plan" value="120" type="radio">
+          <input id="advanced" name="plan" value="12" type="radio">
           <label for="advanced">
             <img src="assets/images/icon-advanced.svg">
             <p>Advanced</p>
             <p>$120/yr</p>
             <p>2 Months free</p>
           </label>
-          <input id="pro" name="plan" value="150" type="radio">
+          <input id="pro" name="plan" value="15" type="radio">
           <label for="pro">
             <img src="assets/images/icon-pro.svg">
             <p>Pro</p>
@@ -85,6 +85,10 @@
             <p>2 Months free</p>
           </label>
         </fieldset>
+        <label for="monthly">Monthly</label>
+        <input type="checkbox" id="monthly" name="monthly" value="true">
+        <label for="monthly" class="slider"></label>
+        <label for="monthly">Yearly</label>
         <div class="btns">
           <button type="button">Go Back</button>
           <button type="submit">Next Step</button>
@@ -130,6 +134,21 @@
 
         <h1>Finishing up</h1>
         <p>Double-check everything looks OK before confirming.</p>
+        <div>
+        <p id="s4-plan">Plan</p>
+        </div>
+        <div class="extras">
+        <p >Online Service</p>
+        <p></p>
+        </div>
+        <div class="extras">
+        <p>Larger Storage</p>
+        <p></p>
+        </div>
+        <div class="extras">
+        <p>Customizable Profile</p>
+        <p></p>
+        </div>
         <p>Total (per month/year)</p>
         <div class="btns">
           <button type="button">Go Back</button>
