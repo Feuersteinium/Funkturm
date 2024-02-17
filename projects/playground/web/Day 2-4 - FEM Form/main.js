@@ -8,16 +8,31 @@ document.addEventListener('DOMContentLoaded', () => {
             currentSlide = 1
         }
 
-        if (currentSlide === 4) {
-            pricecalculation(details)
-        }
-
+        
 
         let form = document.querySelector('#f-step-' + slide.toString())
         form.style.display = "flex"
         let indicator = document.querySelector(".boxy:nth-child(" + currentSlide.toString() + ") h2")
         indicator.style.backgroundColor = "white"
         console.log(currentSlide + ">> Started Function")
+
+        if (currentSlide === 4) {
+            pricecalculation(details)
+            document.querySelector("#confirm").addEventListener("click", () => {
+                if (validate(details) === "valid") {
+                    let form = document.querySelector('#f-step-' + currentSlide.toString())
+                    let indicator = document.querySelector(".boxy:nth-child(" + currentSlide.toString() + ") h2")
+                    indicator.style.backgroundColor = ""
+                    form.style.display = "none"
+                    document.querySelector("#f-step-5").style.display = "flex"
+                }
+                else {
+                    window.alert("Form is invalid")
+                }
+            })
+        }
+
+
         function triggerme(e) {
             e.preventDefault()
             let data = new FormData(form)        
@@ -43,20 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener("submit", triggerme)
            
     }
-     /*   form.removeEventListener("submit", (e) => {
-            e.preventDefault()
-            let data = new FormData(form)        
-            for (let loop of data.entries()) {
-                details[loop[0]] = loop[1]
-            }
-            form.style.display = "none"
-            currentSlide++
-            console.log(details)
-            console.log(currentSlide)
-            console.log("Unreachable")
-        })*/
 
-    console.log(currentSlide + ">> INIT btw.")
     submit(currentSlide)
    
 let gobackbtn = document.querySelectorAll(".btns button:first-child")
@@ -146,5 +148,11 @@ function pricecalculation(input) {
         currentSlide = slidenb
         submit(currentSlide)
     }
+
+    function validate() {
+        return "valid"
+    }
+
+
 })
 
