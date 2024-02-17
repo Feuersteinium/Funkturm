@@ -275,8 +275,22 @@ input:checked + .slider {
     flex-direction: column;
 }
 
+#f-step-4 .extras {
+    display: none;
+}
+
+#f-step-4 .extras p:nth-child(2) {
+    margin-left: auto;
+}
 
 
+.total {
+    display: flex;
+}
+
+#totalpricing {
+    margin-left: auto;
+}
 #f-step-5 {
     display: none;
     flex-direction: column;

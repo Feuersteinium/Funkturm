@@ -74,45 +74,51 @@ gobackbtn.forEach( (btn) => {btn.addEventListener("click", () => {
 })
 
 function pricecalculation(input) {
-    console.log("PC RUNNING")
-    pricing = input["plan"] + input["profile"] + input["service"] + input["storage"]
+    if (input["profile"] === undefined) {
+        input["profile"] = 0
+    }
+    if (input["service"] === undefined) {
+        input["service"] = 0
+    }
+    if (input["storage"] === undefined) {
+        input["storage"] = 0
+    }
+    pricing = Number(input["plan"]) + Number(input["profile"]) + Number(input["service"]) + Number(input["storage"])
     if (input["monthly"] === "true") {
         document.querySelector("#f-step-4 #s4-plan").textContent = "(Monthly)"
         if (input["service"] !== "0") {
-            console.log("PC RUNNING 1 ")
             document.querySelector("#f-step-4 div:nth-of-type(2)").style.display = "flex"
             document.querySelector("#f-step-4 div:nth-of-type(2) p:nth-child(2)").textContent = "1$/mo"
         }
         if (input["storage"] !== "0") {
-            console.log("PC RUNNING 2")
         document.querySelector("#f-step-4 div:nth-of-type(3)").style.display = "flex"
         document.querySelector("#f-step-4 div:nth-of-type(3) p:nth-child(2)").textContent = "2$/mo"
         }
         if (input["profile"] !== "0") {
-            console.log("PC RUNNING 3")
         document.querySelector("#f-step-4 div:nth-of-type(4)").style.display = "flex"
         document.querySelector("#f-step-4 div:nth-of-type(4) p:nth-child(2)").textContent = "2$/mo"
         }
+        document.querySelector("#totalpricing").textContent = pricing.toString() + "$/mo"
         }
       
     else {
+        console.log(pricing)
         pricing = pricing * 10
+        console.log(pricing)
         document.querySelector("#f-step-4 #s4-plan").textContent = "(Annual)"
         if (input["service"] !== "0") {
-            console.log("PC RUNNING 1 ")
             document.querySelector("#f-step-4 div:nth-of-type(2)").style.display = "flex"
             document.querySelector("#f-step-4 div:nth-of-type(2) p:nth-child(2)").textContent = "10$/yr"
         }
         if (input["storage"] !== "0") {
-            console.log("PC RUNNING 2")
         document.querySelector("#f-step-4 div:nth-of-type(3)").style.display = "flex"
         document.querySelector("#f-step-4 div:nth-of-type(3) p:nth-child(2)").textContent = "20$/yr"
         }
         if (input["profile"] !== "0") {
-            console.log("PC RUNNING 3")
         document.querySelector("#f-step-4 div:nth-of-type(4)").style.display = "flex"
         document.querySelector("#f-step-4 div:nth-of-type(4) p:nth-child(2)").textContent = "20$/yr"
         }
+        document.querySelector("#totalpricing").textContent = pricing.toString() + "$/yr"
         }
     }
 })
