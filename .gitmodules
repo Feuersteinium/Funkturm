@@ -1,0 +1,3 @@
+[submodule "projects/curiosity"]
+	path = projects/curiosity
+	url = git@github.com:Feuersteinium/curiosity.git

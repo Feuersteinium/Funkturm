@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function triggerme(e) {
             e.preventDefault()
+            console.log(currentSlide)
             let data = new FormData(form)        
             for (let loop of data.entries()) {
                 details[loop[0]] = loop[1]
@@ -42,8 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
             form.style.display = "none"
             indicator.style.backgroundColor = ""
             form.removeEventListener("submit", triggerme)
+            if (currentSlide < 4) {
             currentSlide++
-
+            }   
             // Recursion Protection
 
             if (currentSlide <= 5) {
@@ -162,6 +164,7 @@ function pricecalculation(input) {
         if (details["plan"] === undefined) {
             return "invalid"
         }
+        return "valid"
     }
 
 

@@ -54,6 +54,23 @@ p {
     display: flex;
 }
 
+@media (max-width: 830px) {
+    body {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+
+    .container {
+        flex-direction: column;
+        grid-area: 1 / 1 / 4 / 5;
+        width: 90%;
+        align-self: center;
+        justify-self: center;
+    }
+}
+
+
 /* Chapter I >> The Form itself*/
 
 
