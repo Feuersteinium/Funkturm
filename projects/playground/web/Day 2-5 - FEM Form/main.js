@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
         form.style.display = "flex"
         let indicator = document.querySelector(".boxy:nth-child(" + currentSlide.toString() + ") h2")
         indicator.style.backgroundColor = "white"
-        console.log(currentSlide + ">> Started Function")
-
         if (currentSlide === 4) {
             pricecalculation(details)
             document.querySelector("#confirm").addEventListener("click", () => {
@@ -25,9 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     indicator.style.backgroundColor = ""
                     form.style.display = "none"
                     document.querySelector("#f-step-5").style.display = "flex"
+                    currentSlide = 5
                 }
                 else {
-                    window.alert("Form is invalid")
+                    window.alert("Form is invalid \n Step 1 + 2 should be filled")
+                    console.log(currentSlide)
                 }
             })
         }
@@ -43,16 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
             indicator.style.backgroundColor = ""
             form.removeEventListener("submit", triggerme)
             currentSlide++
-            console.log(details)
-            console.log(currentSlide)
 
             // Recursion Protection
 
             if (currentSlide <= 5) {
                 submit(currentSlide)
             }
-            console.log("EXEC Submit DONE")
-
         }
 
         form.addEventListener("submit", triggerme)
@@ -69,7 +65,6 @@ gobackbtn.forEach( (btn, skipfor = "OFF") => {btn.addEventListener("click", () =
         indicator.style.backgroundColor = ""
         form.style.display = "none"
         currentSlide--
-        console.log(currentSlide + ">> BTN triggered")
         submit(currentSlide)
     }
 })
@@ -104,9 +99,7 @@ function pricecalculation(input) {
         }
       
     else {
-        console.log(pricing)
         pricing = pricing * 10
-        console.log(pricing)
         document.querySelector("#f-step-4 #s4-plan").textContent = "(Annual)"
         if (input["service"] !== "0") {
             document.querySelector("#f-step-4 div:nth-of-type(2)").style.display = "flex"
@@ -140,7 +133,10 @@ function pricecalculation(input) {
     })
 
     function swto(slidenb) {
-        console.log("triggered")
+        if (currentSlide >= 5) {
+            console.warn("You already submitted the form >> Refusing to go back to preferred slide.")
+            return 
+        }
         let form = document.querySelector('#f-step-' + currentSlide.toString())
         let indicator = document.querySelector(".boxy:nth-child(" + currentSlide.toString() + ") h2")
         indicator.style.backgroundColor = ""
@@ -150,7 +146,22 @@ function pricecalculation(input) {
     }
 
     function validate() {
-        return "valid"
+        console.log("Validating")
+        let pattern = /^[\w\s]*$/
+        if (!pattern.test(details["name"])) {
+            return "invalid"
+        }
+        pattern = /\S+@\S+\.\S+/;
+        if (!pattern.test(details["mail"])) {
+            return "invalid"
+        }
+        pattern = /^\+?[\d\s]*$/
+        if (!pattern.test(details["phone"])) {
+            return "invalid"
+        }
+        if (details["plan"] === undefined) {
+            return "invalid"
+        }
     }
 
 
